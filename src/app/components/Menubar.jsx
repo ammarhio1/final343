@@ -11,7 +11,7 @@ export default function Menubar() {
         </li>
         <li>
           <a
-            href="https://expense-exam-part-1.vercel.app"
+            href="exam1-expense-new.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-400 transition-colors duration-200"

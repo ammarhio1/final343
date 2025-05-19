@@ -54,7 +54,7 @@ export default function Home() {
                 type="text"
                 value={product.description}
                 onChange={(e) => updateDescription(product.id, e.target.value)}
-                className="w-full p-1 border border-gray-300 rounded"
+                className="w-full p-1 border border-gray-300 rounded text-red-600"
               />
             </div>
           ))}

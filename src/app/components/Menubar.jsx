@@ -11,7 +11,7 @@ export default function Menubar() {
             <a href='https://exam1-expense-new.vercel.app' target='_blank'>Midterm Part I - Expense</a>
           </li>
           <li>
-            <a href='https://customer-weld.vercel.app/' target='_blank'>Midterm Part II Site</a>
+            <a href='https://exam-2-website.vercel.app' target='_blank'>Midterm Part II Site</a>
           </li>
           <li>
             <Link href='/faq'>FAQ</Link>

@@ -63,19 +63,19 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <button
             onClick={addProduct}
-            className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded shadow"
+            className="bg-green-600 hover:bg-green-700 text-red px-4 py-2 rounded shadow"
           >
             Click Here to <b>add</b> a product to certify.
           </button>
           <button
             onClick={removeProduct}
-            className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded shadow"
+            className="bg-red-600 hover:bg-red-700 text-red px-4 py-2 rounded shadow"
           >
             Click Here to <b>remove</b> a product
           </button>
           <button
             onClick={clearProducts}
-            className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded shadow"
+            className="bg-gray-600 hover:bg-gray-700 text-red px-4 py-2 rounded shadow"
           >
             <b>Reset</b> amount of products to certify
           </button>

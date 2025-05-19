@@ -5,7 +5,10 @@ export default function Home() {
   const [products, setProducts] = useState([]);
 
   const addProduct = () => {
-    setProducts((prev) => [...prev, `Product ${prev.length + 1}`]);
+    setProducts((prev) => [
+      ...prev,
+      { id: Date.now(), description: `Product ${prev.length + 1}` },
+    ]);
   };
 
   const removeProduct = () => {
@@ -14,6 +17,14 @@ export default function Home() {
 
   const clearProducts = () => {
     setProducts([]);
+  };
+
+  const updateDescription = (id, newDescription) => {
+    setProducts((prev) =>
+      prev.map((product) =>
+        product.id === id ? { ...product, description: newDescription } : product
+      )
+    );
   };
 
   return (
@@ -34,33 +45,35 @@ export default function Home() {
         </h2>
 
         <div id="display" className="mb-6 space-y-2">
-          {products.map((product, index) => (
+          {products.map((product) => (
             <div
-              key={index}
+              key={product.id}
               className="bg-white p-2 rounded border border-gray-300 shadow-sm"
             >
-              {product}
+              <input
+                type="text"
+                value={product.description}
+                onChange={(e) => updateDescription(product.id, e.target.value)}
+                className="w-full p-1 border border-gray-300 rounded"
+              />
             </div>
           ))}
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <button
-            id="Add Product"
             onClick={addProduct}
             className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded shadow"
           >
             Click Here to <b>add</b> a product to certify.
           </button>
           <button
-            id="Remove Product"
             onClick={removeProduct}
             className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded shadow"
           >
             Click Here to <b>remove</b> a product
           </button>
           <button
-            id="Clear"
             onClick={clearProducts}
             className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded shadow"
           >
